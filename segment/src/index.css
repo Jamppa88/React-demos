@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.segmenter {
+    width: 100vw;
+    height: 100vh;
+}
+
+.segmenter-background,
+.segmenter-pieces,
+.segmenter-wrap,
+.segmenter-body,
+.segmenter-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.segmenter-background,
+.segmenter-box {
+    /* Picture taken from unsplash.com */
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.segmenter-shadow {
+    position: absolute;
+    box-shadow: 0px 7px 10px 3px rgba(0, 0, 0, 0.45);
+}
+
+.segmenter-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.segmenter-body h1 {
+    font-family: 'Kumar One', cursive;
+    font-size: 7vw;
+    white-space: nowrap;
+}
