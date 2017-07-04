@@ -7,7 +7,7 @@ import Alt from '../views/alternate-view.js';
 import Sidebar from './sidebar.js';
 import '../style.css';
 
-
+import { Motion, presets, spring } from 'react-motion';
 
 export default class Page extends React.Component {
 	constructor(props){
@@ -15,6 +15,7 @@ export default class Page extends React.Component {
 		this.state = {
 			headline: "Jani Kerttula",
 			view: <Home />,
+			sbVisible: true,
 		};
 	}
 
@@ -41,21 +42,21 @@ export default class Page extends React.Component {
 		const header = document.getElementById("header");
 		if (body.scrollTop === body.offsetTop) {
 			header.style.padding = "10px";
-			header.style.opacity = 0.7;
+			header.style.backgroundColor = "#D7CEC7";
 		}
 		else {
 			header.style.padding = "4px";
-			header.style.opacity = 1;
+			header.style.backgroundColor = "#814015";
 		}
 	}
 
 	getView(value) {
 		switch (value){
 			case 'Jani Kerttula':
-				this.setState({view: <Home />});
+				this.setState({view: <Home />, sbVisible: true});
 			  break;
 		  default:
-			  this.setState({view: <Alt />});
+			  this.setState({view: <Alt />, sbVisible: false});
 				break;
 		}
 	}
@@ -66,7 +67,11 @@ export default class Page extends React.Component {
 				<Header headline={this.state.headline} onClick={this.handleOnClick.bind(this)}/>
 				<Content>
 					{this.state.view}
-					<Sidebar />
+					<Motion defaultStyle={{x: 310}} style={{x: (this.state.sbVisible ? spring(0) : spring(310)), config: presets.stiff}}>
+					{({x}) =>
+						<Sidebar style={{transform: `translate3d(${x}px, 0px, 0px)`}} />
+					}
+				</Motion>
 				</Content>
 				<Footer />
 			</div>

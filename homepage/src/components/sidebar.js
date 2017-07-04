@@ -3,7 +3,7 @@ import React from 'react';
 export default function Sidebar(props) {
 
 	return(
-		<div id="sidebar">
+		<div id="sidebar" style={props.style}>
 			<img id="photo" src="/Jani_Kerttula.jpg" alt="Oma kuva"/>
 			<ul>
 				<li>Jani Kerttula</li>
