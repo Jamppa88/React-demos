@@ -5,10 +5,10 @@ import { Motion, spring, presets } from 'react-motion';
 export default function Home(props) {
 
 	return(
-		<Motion defaultStyle={{x: -500, y: 0}} style={{x: spring(0), y: spring(0.9), config: presets.gentle}}>
+		<Motion defaultStyle={{x: 500, y: 0}} style={{x: spring(0, {stiffness: 39, damping: 9}), y: spring(0.9)}}>
 		{({x, y}) =>
 
-			<div id="homeView" style={{transform: `translate3d(${x}px, 0px ,0px)`, opacity: y}}>
+			<div id="homeView" style={{transform: `translate3d(0px, ${x}px ,0px)`, opacity: y}}>
 				<h2>Tervetuloa!</h2>
 				<p>Olen {getAge()}-vuotias ohjelmistotekniikan opiskelija, ja aloitin opinnot 2016 Jyväskylän Ammattikorkeakoulussa. Olen jo aikasemminkin opiskellut samassa oppilaitoksessa, automaatiotekniikkaa vuosina 2008-2013.</p>
 				<br />

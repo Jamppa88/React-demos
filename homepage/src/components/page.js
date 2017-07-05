@@ -74,7 +74,7 @@ export default class Page extends React.Component {
 				<Header headline={this.state.headline} onClick={this.handleOnClick.bind(this)}/>
 				<Content>
 					{this.state.view}
-					<Motion defaultStyle={{x: 310}} style={{x: (this.state.sbVisible ? spring(0) : spring(310)), config: presets.gentle}}>
+					<Motion defaultStyle={{x: 310}} style={{x: (this.state.sbVisible ? spring(0, {stiffness: 39, damping: 11}) : spring(310, {stiffness: 39, damping: 11}))}}>
 					{({x}) =>
 						<Sidebar style={{transform: `translate3d(${x}px, 0px, 0px)`}} />
 					}

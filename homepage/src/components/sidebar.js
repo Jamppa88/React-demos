@@ -9,6 +9,8 @@ export default function Sidebar(props) {
 			<ul>
 				<li>Jani Kerttula</li>
 				<li>Ikä: {getAge()}</li>
+				<li>Ohjelmistoinsinööri</li>
+
 			</ul>
 		</div>
 	);
