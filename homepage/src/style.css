@@ -30,17 +30,25 @@ body {
 	z-index: 1;
 	position: fixed;
 }
-#header h1, button {
-	opacity: 1;
-}
 
-.content {
+
+#homeView {
 	background-color: #E3DCD7;
 	color: #76323F;
 	text-shadow: 1px 1px 1px #866F59;
 	padding: 1em;
 	float: left;
 	margin: 0 20em 6em 2.2em;
+	border-radius: 1em;
+	width: auto;
+}
+.view {
+	background-color: #E3DCD7;
+	color: #76323F;
+	text-shadow: 1px 1px 1px #866F59;
+	padding: 1em;
+	float: left;
+	margin: 0 2.2em 6em 2.2em;
 	border-radius: 1em;
 	width: auto;
 }
@@ -58,15 +66,37 @@ body {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	color: #565656;
+}
+#footLeft {
+	float: left;
+	font-size: 1em;
+	margin: 1.5em 0.1em auto 1em;
+
+}
+#footRight {
+	font-size: 1em;
+	float: right;
+	margin: 1.5em 1em 1em 1em;
+	font-style: italic;
+
+}
+#footer img {
+	height: 2em;
+	margin: 1em;
 }
 
 .menuButton {
-	color: bisque;
-	background-color: mediumslateblue;
+	color: #E3DCD7;
+	background-color: #565656;
+	box-shadow: 1px 1px 3px black;
 	border: 0;
+	padding: 1em;
+	outline: 0;
 }
 .menuButton:hover {
-	background-color: blue;
+	background-color: #76323F;
+	box-shadow: 0.5px 0.5px 2px black;
 }
 
 #photo {
@@ -78,24 +108,58 @@ body {
 
 #sidebar {
 	padding: 3em 2em 3em 2em;
-	margin: 2em 2em 2em 10%;
+	margin: 0em 2em 2em 10%;
 	border-radius: 1em;
 	box-shadow: 0.6em 0.6em 2em #866F59;
-	background-color: #C09F80;
+	background-color: #565656;
 	position: fixed;
 	right: 0;
-	color: #76323F;
+	color: #E3DCD7;
 	text-shadow: 1px 0px 1px #5E2832;
 }
 #menu {
 	float: right;
 	padding: 10px;
+	margin-right: 20%;
+}
+#links {
+	float: right;
+	display: flex;
+	padding: 10px;
+	margin-right: 2em;
 }
 
 #headline {
 	float: left;
-	margin: 0px 0px 0px 30px;
+	margin: 0px 0px 0px 20%;
 }
 p {
 	font-size: 30px;
 }
+a {
+	color: #565656;
+	margin: 0.2em;
+	text-shadow: 1px 1px 3px black;
+}
+a:hover {
+	color: #5E2832;
+	text-shadow: 0.5px 0.5px 2px black;
+}
+
+@media only screen and (max-width: 1100px) {
+	#links {
+		margin-right: 20%;
+	}
+	#sidebar {
+		margin: 0em 2em 2em 10%;
+	}
+	#header_outline {
+		height: 150px;
+	}
+}
+@media only screen and (max-width: 800px) {
+	#headline {
+		margin: 0px 0px 0px 10%;
+	}
+}
+
