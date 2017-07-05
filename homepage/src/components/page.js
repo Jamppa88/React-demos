@@ -8,7 +8,7 @@ import Portfolio from '../views/portfolio-view.js';
 import Sidebar from './sidebar.js';
 import '../style.css';
 
-import { Motion, presets, spring } from 'react-motion';
+import { Motion, spring } from 'react-motion';
 
 export default class Page extends React.Component {
 	constructor(props){

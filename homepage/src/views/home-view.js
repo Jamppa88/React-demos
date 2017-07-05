@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAge } from '../functions/functions.js';
-import { Motion, spring, presets } from 'react-motion';
+import { Motion, spring } from 'react-motion';
 
 export default function Home(props) {
 
