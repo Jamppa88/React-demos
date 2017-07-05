@@ -21,9 +21,7 @@ export default class Page extends React.Component {
 	}
 
 	componentWillMount() {
-		console.log(document.body);
 		document.body.onscroll = this.handleScroll;
-		console.log(document.body.onscroll);
 	}
 
 	conmponentWillUnmount() {
@@ -43,12 +41,12 @@ export default class Page extends React.Component {
 		const header = document.getElementById("header");
 		if (body.scrollTop === body.offsetTop) {
 			header.style.padding = "10px";
-			header.style.backgroundColor = "#D7CEC7";
+			header.style.backgroundColor = null;
 			header.style.boxShadow = null;
 		}
 		else {
 			header.style.padding = "4px";
-			header.style.backgroundColor = "#C09F80";
+			header.style.backgroundColor = "#D7CEC7";
 			header.style.boxShadow = "0 0.2em 1em #866F59";
 		}
 	}

@@ -21,19 +21,19 @@ export default function Header(props) {
 				</div>
 
 				<div id="links">
-					<a href="https://www.facebook.com/Jamppa88"><i className="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-					<a href="https://www.linkedin.com/in/jani-kerttula-54938b12b/"><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-					<a href="https://github.com/Jamppa88"><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
-					<a href="https://docs.google.com/document/d/1wQ9QszVk0JQK4iGqov96_qgQ6GOQKMZ_jRwGC8QCwAQ/edit?usp=sharing"><i className="fa fa-file-text fa-2x" aria-hidden="true"></i> <span>CV</span></a>
+					<a href="https://www.facebook.com/Jamppa88" target="_blank"><i className="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.linkedin.com/in/jani-kerttula-54938b12b/" target="_blank"><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://github.com/Jamppa88" target="_blank"><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://docs.google.com/document/d/1wQ9QszVk0JQK4iGqov96_qgQ6GOQKMZ_jRwGC8QCwAQ/edit?usp=sharing" target="_blank"><i className="fa fa-file-text fa-2x" aria-hidden="true"></i> <span>CV</span></a>
 				</div>
 			</div>
 		</div>
 	);
 }
 
-function ToCV() {
+/*function ToCV() {
 	const url = "https://docs.google.com/document/d/1wQ9QszVk0JQK4iGqov96_qgQ6GOQKMZ_jRwGC8QCwAQ/edit?usp=sharing";
 	window.open(url);
-}
+}*/
 
 
