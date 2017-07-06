@@ -43,11 +43,15 @@ export default class Page extends React.Component {
 			header.style.padding = "10px";
 			header.style.backgroundColor = null;
 			header.style.boxShadow = null;
+			document.getElementById("headline").style.display = "block";
 		}
 		else {
 			header.style.padding = "4px";
 			header.style.backgroundColor = "#D7CEC7";
 			header.style.boxShadow = "0 0.2em 1em #866F59";
+			if (window.innerWidth < 650) {
+				document.getElementById("headline").style.display = "none";
+			}
 		}
 	}
 

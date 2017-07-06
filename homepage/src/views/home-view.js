@@ -30,7 +30,7 @@ export default function Home(props) {
 				<h3>Videopelit</h3>
 				<p>Näistä voisinkin kertoa vaikka maailman tappiin asti, mutta käydään lyhyesti. Innostunut jo ihan vaahtosammuttimen kokoisena kun isoveli opetti pelaamaan Leisure Suit Larrya vanhalla 486 -tietokoneella. Siitä asti pelit ovat olleet aina lähellä sydäntä, monta erilaista pelikonsolia on ollut, tietokonetta vaihdettu ja päivitetty usein ajan hermolle yms. Olen aina ollut kaikkiruokainen pelien suhteen, mutta mieleisimpiä ovat roolipelit ja seikkailupelit.</p>
 
-				<h3>D&D eli Dungeons And Dragons</h3>
+				<h3>D&D eli Dungeons & Dragons</h3>
 				<p>Pyötäroolipeli, kutsutaan myös pen-and-paper, on tuorein harraste. Keräännymme ystäväporukan kanssa viikoittain istumaan pöydän ääreen ja pidämme hauskaa lahdaten milloin mitäkin, mitä vastaan tulee. Peli on itsessään kovin monimutkainen, joten en ala avaamaan sitä sen enempää. Tarkoituksena on irtaantua harmaasta arjesta ja olla joku muu, kuin normaalisti on.</p>
 
 				<h3>Pulkkamäki</h3>
