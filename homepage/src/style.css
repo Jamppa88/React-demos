@@ -1,26 +1,25 @@
-html {
+html, body, #root {
 	padding: 0;
-}
-body {
 	margin: 0;
-	background-image: url(../public/clouds.jpg);
-	background-attachment: fixed;
-	/*background-size: cover;*/
-	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+}
 
-	/*margin-top: -21px;*/
-}
-#root {
-	margin: 0;
-}
 #page {
 	margin: 0;
+	height: 100%;
+	width: 100%;
+	background-image: url(../public/clouds.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
 }
 
 #header_outline {
-	display: flow-root;
-	height: 100px;
-
+	/*height: 100px;*/
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 #header {
@@ -33,7 +32,6 @@ body {
 	transition: padding 0.2s;
 	width: 100%;
 	z-index: 1;
-	position: fixed;
 }
 
 
@@ -140,18 +138,18 @@ body {
 	float: left;
 	margin: 0px 0px 0px 20%;
 }
-h2 {
+#homeView h2, .view h2 {
 	font-size: 1.5em;
 }
-p {
+#homeView p, .view p {
 	font-size: 1.5em;
 }
-a {
+#links a, .view a {
 	color: #565656;
 	margin: 0.3em;
 	text-shadow: 1px 1px 3px black;
 }
-a:hover {
+#links a:hover, .view a:hover {
 	color: #5E2832;
 	text-shadow: 0.5px 0.5px 2px black;
 }
@@ -180,7 +178,7 @@ a:hover {
 
 	}
 }
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1230px) {
 	#homeView {
 		margin: 0 5% 6em 5%;
 	}
@@ -250,11 +248,7 @@ a:hover {
 }
 @media only screen and (max-width: 650px) {
 	#headline {
-		font-size: 0.9em;
-		float: none;
-		position: absolute;
-		top: 4em;
-		margin-left: 20%;
+		display: none;
 	}
 	.fa-2x {
 		font-size: 1.5em;

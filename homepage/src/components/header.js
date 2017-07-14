@@ -17,6 +17,7 @@ export default function Header(props) {
 					<button className="menuButton" value="Jani Kerttula" onClick={props.onClick}>Etusivu</button>
 					<button className="menuButton" value="Yhteystiedot" onClick={props.onClick}>Yhteystiedot</button>
 					<button className="menuButton" value="Portfolio" onClick={props.onClick}>Portfolio</button>
+					<button className="menuButton" value="Apps" onClick={props.onClick}>Appit</button>
 
 				</div>
 
@@ -30,10 +31,3 @@ export default function Header(props) {
 		</div>
 	);
 }
-
-/*function ToCV() {
-	const url = "https://docs.google.com/document/d/1wQ9QszVk0JQK4iGqov96_qgQ6GOQKMZ_jRwGC8QCwAQ/edit?usp=sharing";
-	window.open(url);
-}*/
-
-

@@ -1,0 +1,33 @@
+#app-wrapper {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background-attachment: fixed;
+	background-color: bisque;
+}
+
+#app-header {
+	background-color: antiquewhite;
+	box-shadow: 2px 2px 2px black;
+	display: block;
+	margin: auto;
+	width: 80%;
+	text-align: center;
+}
+
+.appBtn_back {
+	font-size: 1.5em;
+	margin-top: 2em;
+	background-color: firebrick;
+	width: 80%;
+	margin-bottom: 1em;
+}
+
+.appBtn {
+	font-size: 2em;
+	width: 90%;
+}
+
+#app-header h1 {
+	font-weight: 600;
+}

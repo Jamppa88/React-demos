@@ -1,3 +1,4 @@
+import page from 'page';
 import React from 'react';
 import Header from './header.js';
 import Content from './content.js';
@@ -10,7 +11,7 @@ import '../style.css';
 
 import { Motion, spring } from 'react-motion';
 
-export default class Page extends React.Component {
+export default class HomePage extends React.Component {
 	constructor(props){
 	 super(props);
 		this.state = {
@@ -43,15 +44,11 @@ export default class Page extends React.Component {
 			header.style.padding = "10px";
 			header.style.backgroundColor = null;
 			header.style.boxShadow = null;
-			document.getElementById("headline").style.display = "block";
 		}
 		else {
 			header.style.padding = "4px";
 			header.style.backgroundColor = "#D7CEC7";
 			header.style.boxShadow = "0 0.2em 1em #866F59";
-			if (window.innerWidth < 650) {
-				document.getElementById("headline").style.display = "none";
-			}
 		}
 	}
 
@@ -65,6 +62,9 @@ export default class Page extends React.Component {
 				break;
 			case 'Portfolio':
 				this.setState({view: <Portfolio />, sbVisible: false});
+				break;
+			case 'Apps':
+				page.show("/apps");
 				break;
 		  default:
 			  this.setState({view: <Home />, sbVisible: true});
