@@ -18,9 +18,7 @@ export default function InitTableItem(props) {
 						type="number"
 						name={key}
 						defaultValue={props.char.mod}
-						min="-10"
-						max="20"
-						style={{float: "right"}}
+						style={{float: "right", width: "40px"}}
 						onChange={props.handleChange} />
 					<label style={{fontSize: "0.7em", color: "white", float: "right"}}>Mod:</label>
 				</div>

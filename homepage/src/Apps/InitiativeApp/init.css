@@ -2,9 +2,8 @@
 	box-sizing: border-box;
 }
 #init-wrapper {
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
-	position: fixed;
 	background-color: burlywood;
 }
 #init-header {
@@ -138,6 +137,7 @@
 }
 #init-footer {
 	text-align: center;
+	margin-bottom: 50px;
 }
 #init-footer button {
 	color: darkgreen;

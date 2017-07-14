@@ -18,7 +18,6 @@ export default function Header(props) {
 					<button className="menuButton" value="Yhteystiedot" onClick={props.onClick}>Yhteystiedot</button>
 					<button className="menuButton" value="Portfolio" onClick={props.onClick}>Portfolio</button>
 					<button className="menuButton" value="Apps" onClick={props.onClick}>Appit</button>
-
 				</div>
 
 				<div id="links">

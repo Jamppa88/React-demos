@@ -108,7 +108,6 @@ export default class InitiativeApp extends React.Component {
 		const chars = this.state.chars.map(function(char) {
 			let roll1 = self.rollDice();
 			let roll2 = self.rollDice();
-			console.log(roll1 + " " + roll2);
 
 			switch (char.adv) {
 				case "disAdv":
@@ -124,7 +123,6 @@ export default class InitiativeApp extends React.Component {
 					char.init = roll1 + Number(char.mod);
 					break;
 			}
-			console.log(char.init);
 			return char;
 		});
 		this.setState({chars: chars});

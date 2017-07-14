@@ -12,8 +12,7 @@ export default function InitHeader(props) {
 				id="initMod"
 				type="number"
 				name="mod"
-				min="-10"
-				max="20"
+				style={{width: "60px"}}
 				defaultValue="0" />
 			<label id="lbMod">Mod</label>
 			<br />
