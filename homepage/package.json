@@ -1,6 +1,6 @@
 {
   "name": "homepage",
-	"homepage": "http://Jamppa88.github.io",
+  "homepage": "http://Jamppa88.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,8 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "page": "^1.7.1",
+    "react-motion": "^0.5.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
