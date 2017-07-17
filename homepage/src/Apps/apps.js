@@ -15,6 +15,9 @@ export default class AppPage extends React.Component {
 			case 'initiative':
 				page.show("/apps/initiative");
 				break;
+			case 'test':
+				page.show("/apps/test");
+				break;
 			default:
 				break;
 		}
@@ -29,6 +32,8 @@ export default class AppPage extends React.Component {
 							<h1>Here be Apps!</h1>
 							<button className="appBtn" onClick={this.handleClick} value="initiative">Initiative App</button>
 							<br />
+							<button className="appBtn" onClick={this.handleClick} value="test">Test Env</button>
+							<br />
 							<button className="appBtn_back" onClick={this.handleBack}>Back to home</button>
 						</div>
 				}
@@ -37,4 +42,3 @@ export default class AppPage extends React.Component {
 		);
 	}
 }
-

@@ -4,13 +4,6 @@
 #init-wrapper {
 	min-height: 100%;
 	width: 100%;
-	background-color: burlywood;
-}
-#init-header {
-	outline: black;
-	outline-style: solid;
-
-/*	position: fixed;*/
 }
 #initBtn_back {
 	/*position: fixed;*/
@@ -62,16 +55,8 @@
 	font-size: 1.8em;
 	outline: 0;
 }
-#initClear {
-	background-color: red;
-	border-color: crimson;
-	color: darkred;
-	height: 30px;
-	vertical-align: text-bottom;
-/*	margin-top: -15px;*/
-	font-size: 1.2em;
-	outline: 0;
-}
+
+
 #initList {
 	list-style: none;
 	padding: 10px;
@@ -139,19 +124,8 @@
 	text-align: center;
 	margin-bottom: 50px;
 }
-#init-footer button {
-	color: darkgreen;
-	background-color: chocolate;
-	font-size: 1.4em;
-	text-shadow: 1px 1px 1px chartreuse;
-	width: 50%;
-	border-color: coral;
-	box-shadow: 1px 1px 1px black;
-}
-#init-footer button:hover {
-	box-shadow: 2px 2px 2px black;
-	transform: translate3d(-1px, -1px, 0px);
-}
+
+
 @media only screen and (max-width: 378px) {
 	#initAdd {margin-right: 5px;}
 	.selectBox {margin: 2px 5px 2px 5px;}

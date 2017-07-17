@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import HomePage from './components/homepage.js';
 import AppPage from './Apps/apps.js';
 import InitiativeApp from './Apps/InitiativeApp/initiative-app.js';
+import Test from './Apps/Test/test.js';
 import './style.css';
 
 page("/home", () => {
@@ -16,6 +17,10 @@ page("/apps", () => {
 
 page("/apps/initiative", () => {
 		ReactDOM.render(<InitiativeApp />, document.getElementById('root'));
+})
+
+page("/apps/test", () => {
+	ReactDOM.render(<Test />, document.getElementById('root'));
 })
 
 page("*", () => page.redirect("/home"));

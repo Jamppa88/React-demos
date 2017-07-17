@@ -3,6 +3,9 @@ import React from 'react';
 import InitHeader from './components/init-header.js';
 import InitTable from './components/init-table.js';
 import InitTableFooter from './components/init-table-footer.js';
+import InitAddModal from './components/init-modal.js';
+
+import { Button, Jumbotron } from 'react-bootstrap';
 import './init.css';
 import './grids2.css';
 
@@ -10,8 +13,7 @@ export default class InitiativeApp extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			placeholder: null,
-			key: 0,
+			showAddModal: false,
 			chars: [],
 		};
 
@@ -20,53 +22,21 @@ export default class InitiativeApp extends React.Component {
 	handleBack = () => {
 		page.show("/apps");
 	}
-	// Handle adding new entries to tracker
-	handleAdd = () => {
-		if (document.getElementById('initName').value !== "") {
-			// Hardcoded way of getting radio button results
-			let adv = null;
-			for (let i = 1; i <= 3; i++) {
-				if (document.getElementById('initBoxSelect').children[i].children[2].checked) {
-					switch(i) {
-						case 1:
-							adv = "disAdv";
-							break;
-						case 2:
-							adv = "normal";
-							break;
-						case 3:
-							adv = "adv";
-							break;
-						default:
-							adv = "normal";
-							break;
-					}
-				}
-			}
-			let key = this.state.key;
-			const char = {
-				key: key,
-				name: document.getElementById('initName').value,
-				mod: document.getElementById('initMod').value,
-				isPC: document.getElementById('initPC_cb').checked,
-				adv: adv,
-				init: null,
-			};
-			key++;
 
-			// Take a copy of the state, and push new entry in
-			let chars = this.state.chars;
-			chars.push(char);
-			// Then setState with new chars array
-			this.setState({
-				chars: chars,
-				key: key,
-			});
-		}
+	handleSubmit = (data) => {
+		let chars = this.state.chars;
+		chars.push(data);
+		this.setState({chars: chars, showAddModal: false});
+	}
 
+	handleshowAddModal = (e) => {
+		// Prevents ghost click
+		e.preventDefault();
+		this.setState({showAddModal: !this.state.showAddModal});
 	}
 
 	handleChange = (e) => {
+		// Prevents ghost click
 		e.preventDefault();
 		let chars = this.state.chars;
 		const key = Number(e.target.name);
@@ -145,16 +115,29 @@ export default class InitiativeApp extends React.Component {
 			return b.init - a.init;
 		});
 
+
 		return(
 			<div id="init-wrapper">
+				<InitAddModal
+					showAddModal={this.state.showAddModal}
+					handleSubmit={this.handleSubmit}
+					handleshowAddModal={this.handleshowAddModal}/>
 				<div className="init-container">
+
 					<div id="init-backBtn">
-						<button id="initBtn_back" onClick={this.handleBack}>Back to App Menu</button>
+						<Button
+							bsStyle="warning"
+							style={{
+									width: "50%",
+									height: "auto",
+									whiteSpace: "inherit",
+									minWidth: "60px",
+							}}
+							onClick={this.handleBack}>Back to App Menu</Button>
 					</div>
 					<InitHeader
-						handleAdd={this.handleAdd}
-						handleClear={this.handleClear}
-						handleBack={this.handleBack} />
+						handleshowAddModal={this.handleshowAddModal}
+						handleRollInitiatives={this.handleRollInitiatives} />
 
 					<InitTable
 						handleKill={this.handleKill}
@@ -162,8 +145,11 @@ export default class InitiativeApp extends React.Component {
 						sortedChars={sortedChars} />
 
 					<InitTableFooter
-						onClick={this.handleRollInitiatives}
-						/>
+						onClick={this.handleClear}
+						table={this.state.chars}
+					/>
+
+
 				</div>
 			</div>
 		);

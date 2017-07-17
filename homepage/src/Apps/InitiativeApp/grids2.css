@@ -3,7 +3,7 @@
 	grid: [row1-start] "back header header" auto [row1-end]
         [row2-start] "table table table" auto [row2-end]
 				[row3-start] "buttonMenu buttonMenu buttonMenu" auto [row3-end]
-        / auto 50% auto;
+        / 12.5% 50% auto;
 }
 
 
@@ -25,11 +25,10 @@
 					/ 8.33% 16.66% 50% 16.66% 8.33%;
 	}
 }
-/*#init-header {
-	grid-row: 1;
-	grid-column-start: 1;
-	grid-column-end: 5;
-}*/
+#init-header {
+	grid-area: header;
+	text-align: center;
+}
 #init-backBtn {
 	grid-area: back;
 
@@ -41,6 +40,7 @@
 
 #init-footer {
 	grid-area: buttonMenu;
+	text-align: center;
 }
 #initTable {
 	grid-area: table;
