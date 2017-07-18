@@ -1,53 +1,48 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Button, Well, Popover, Overlay } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 export default class InitTableFooter extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showPop: false,
+			showModal: false,
 		}
 	}
 
-	handleOpenPop = () => {
-		
+	handleOpenModal = (e) => {
+		e.preventDefault();
+		this.setState({showModal: true});
+	}
+
+	handleClose = () => {
+		this.setState({showModal: false});
+	}
+	handleClear = (e) => {
+		e.preventDefault();
+		this.setState({showModal: false}, this.props.handleClear)
 	}
 
 	render() {
-		const popoverBot = (
-			<Popover id="popover-positioned-bottom">
-				Please enter a name!
-				<Button>Cancel</Button>
-				<Button>Clear Table</Button>
-			</Popover>
-		);
+
 		return(
 			<div id="init-footer">
-				<Well
-					bsSize="small"
-					style={{
-						width: "60%",
-						float: "none",
-						margin: "auto"
-					}}>
-					<Button
-						ref="target"
-						bsStyle="danger"
-						style={{width: "90%"}}
-						disabled={(props.table.length > 0) ? false : true}
-						onClick={props.onClick}>Clear table</Button>
-				</Well>
+				<Button
+					ref="target"
+					bsStyle="danger"
+					style={{width: "90%", margin: "10px 0 50px 0"}}
+					disabled={(this.props.table.length > 0) ? false : true}
+					onClick={this.handleOpenModal}>Clear table</Button>
 
-				<Overlay
-					show={this.state.showPop}
-					container={this}
-					placement="bottom"
-					onHide={handleClearPopClose}
-					target={() => ReactDOM.findDOMNode(this.refs.target)}
-				>
-					{popoverBot}
-				</Overlay>
+				<Modal show={this.state.showModal} onHide={this.handleClose}>
+					<Modal.Body style={{textAlign: "center"}}>
+						Are you sure you want to clear table?
+					</Modal.Body>
+					<Modal.Footer style={{textAlign: "center"}}>
+						<Button onClick={this.handleClose}>Cancel</Button>
+						<Button bsStyle="danger" onClick={this.handleClear}>Clear table</Button>
+					</Modal.Footer>
+				</Modal>
+
 			</div>
 		);
 	}

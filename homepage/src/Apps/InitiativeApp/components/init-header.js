@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Jumbotron } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 export default function InitHeader(props) {
 	return(
@@ -14,6 +14,7 @@ export default function InitHeader(props) {
 				bsStyle="primary"
 				bsSize="large"
 				style={{width: "70%", marginTop: "20px"}}
+				disabled={(props.table.length > 0) ? false : true}
 				onClick={props.handleRollInitiatives}>Roll Initiatives!</Button>
 		</div>
 	);

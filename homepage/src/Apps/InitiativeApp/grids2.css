@@ -3,7 +3,7 @@
 	grid: [row1-start] "back header header" auto [row1-end]
         [row2-start] "table table table" auto [row2-end]
 				[row3-start] "buttonMenu buttonMenu buttonMenu" auto [row3-end]
-        / 12.5% 50% auto;
+        / 18% 50% auto;
 }
 
 

@@ -74,7 +74,9 @@ export default class InitModal extends React.Component {
   }
 
   handleClose = (e) => {
-    e.preventDefault();
+    if (e !== undefined){
+      e.preventDefault();
+    }
     this.setState({
       name: null,
       mod: 0,
@@ -92,7 +94,7 @@ export default class InitModal extends React.Component {
       </Popover>
     );
     return(
-      <Modal show={this.props.showModal}>
+      <Modal show={this.props.showModal} onHide={this.handleClose}>
         <Modal.Title style={{textAlign: "center"}}>Add Character</Modal.Title>
         <Modal.Body>
           <Form horizontal>
@@ -101,7 +103,7 @@ export default class InitModal extends React.Component {
                 <FormControl
                   type="text"
                   placeholder="Character Name"
-
+                  autoFocus={true}
                   onChange={this.handleChange}
                 />
               </Col>
@@ -125,7 +127,7 @@ export default class InitModal extends React.Component {
               <Col xs={12} sm={3} style={{textAlign: "center", marginTop: "10px", paddingLeft: "34px"}}>
                 <Button
                   name="PC"
-                  bsStyle={this.state.isPC ? "primary" : "warning"}
+                  bsStyle={this.state.isPC ? "success" : "warning"}
                   onClick={this.handleChange}
                 >
                   {this.state.isPC ? "Player" : "Monster"}

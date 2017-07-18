@@ -1,47 +1,107 @@
 import React from 'react';
+import { Panel, ListGroupItem, Button, Well, Col, Glyphicon, FormControl, ControlLabel } from 'react-bootstrap';
 
-export default function InitTableItem(props) {
-	const key = props.char.key;
-	return(
-		<div className="init-table-item" style={props.style}>
+export default class InitTableItem extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			showPanel: false,
+		}
+	}
 
-				<div className="initTable-left-name">{props.char.name}</div>
-				<div className="initTable-left-result">{props.char.init}</div>
-				<div className="initTable-middle-killSwitch">
-					<button className="initTable-killSwitch" value={key} onClick={props.handleKill}>Kill</button>
-				</div>
+	handleOpen = () => {
+		this.setState({showPanel: true});
+	}
+
+	handleClose = () => {
+		this.setState({showPanel: false});
+	}
+
+	render() {
+		const char = this.props.char;
+		const header = (
+			<div>
+				<Col xs={2}>
+					<Well
+						bsSize="small"
+						style={{
+							margin: "3px 0 0 0",
+							width: "40px",
+							height: "40px",
+							textAlign: "center"
+						}}>{char.init}</Well>
+				</Col>
+				<Col xs={8} style={{textAlign: "center"}}>
+					<h3 style={{margin: "10px 0 0 0"}}>{char.name}</h3>
+				</Col>
+				<Col xs={2}>
+					<Button
+						bsSize="small"
+						style={{marginTop: "5px"}}
+						onClick={!this.state.showPanel ? this.handleOpen : this.handleClose}>
+						<Glyphicon glyph={!this.state.showPanel ? "chevron-down" : "chevron-up" } />
+					</Button>
+				</Col>
+			</div>
+		);
 
 
-				<div className="initTable-right-mod">
+		return(
+			<span key={char.key}>
+				<ListGroupItem
+					style={{padding: 0, margin: 0}}
+					bsStyle={this.props.style} >
+					{header}
 
-					<input
-						type="number"
-						name={key}
-						defaultValue={props.char.mod}
-						style={{float: "right", width: "40px"}}
-						onChange={props.handleChange} />
-					<label style={{fontSize: "0.7em", color: "white", float: "right"}}>Mod:</label>
-				</div>
-				<br/>
-				<div className="initTable-right-advantage">
-					<select
-						name={key}
-						defaultValue={props.char.adv}
-						style={{float: "right"}}
-						onChange={props.handleChange} >
-						<option
-							name="initDA"
-							value="disAdv">Disadvantage</option>
-						<option
-							name="initN"
-							value="normal">Normal</option>
-						<option
-							name="initA"
-							value="adv">Advantage</option>
-					</select>
-				</div>
+					<Panel
+						collapsible
+						style={{margin: "44px 0 0 0"}}
+						
+						bsStyle={this.props.style}
+						expanded={this.state.showPanel}>
 
-		</div>
-	);
+						<Col xs={4} style={{padding: 0}}>
+							<ControlLabel style={{marginTop: "6px"}}>Mod:</ControlLabel>
+							<FormControl
+								name={char.key}
+								style={{width: "60%", float: "right"}}
+								type="number"
+								bsSize="small"
+								defaultValue={char.mod}
+								onChange={this.props.handleChange}
+							/>
+						</Col>
+						<Col xs={6}>
+							<FormControl
+								bsSize="small"
+								componentClass="select"
+								name={char.key}
+								defaultValue={char.adv}
+								onChange={this.props.handleChange}>
+								<option
+									name="initDA"
+								value="disAdv">Disadvantage</option>
+								<option
+									name="initN"
+								value="normal">Normal</option>
+								<option
+									name="initA"
+								value="adv">Advantage</option>
+							</FormControl>
+						</Col>
+						<Col xs={2} style={{padding: 0}}>
+							<Button
+								bsSize="small"
+								bsStyle="danger"
+								style={{float: "right"}}
+								onClick={this.props.handleKill}>
+								Kill
+							</Button>
+						</Col>
+
+					</Panel>
+				</ListGroupItem>
+			</span>
+		);
+	}
 }
-

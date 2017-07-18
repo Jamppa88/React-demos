@@ -5,15 +5,16 @@ import InitTable from './components/init-table.js';
 import InitTableFooter from './components/init-table-footer.js';
 import InitAddModal from './components/init-modal.js';
 
-import { Button, Jumbotron } from 'react-bootstrap';
-import './init.css';
+import { Button, Modal } from 'react-bootstrap';
+// import './init.css';
 import './grids2.css';
 
 export default class InitiativeApp extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showAddModal: false,
+			showModal: false,
+			showError: false,
 			chars: [],
 		};
 
@@ -24,15 +25,25 @@ export default class InitiativeApp extends React.Component {
 	}
 
 	handleSubmit = (data) => {
-		let chars = this.state.chars;
-		chars.push(data);
-		this.setState({chars: chars, showAddModal: false});
+		if (this.state.chars.length < 30) {
+			let chars = this.state.chars;
+			chars.push(data);
+			this.setState({chars: chars, showModal: false});
+		} else {
+			this.setState({showError: true, showModal: false});
+		}
 	}
 
-	handleshowAddModal = (e) => {
+	handleErrorClose = () => {
+		this.setState({showError: false});
+	}
+
+	handleShowModal = (e) => {
 		// Prevents ghost click
-		e.preventDefault();
-		this.setState({showAddModal: !this.state.showAddModal});
+		if (e !== undefined){
+			e.preventDefault();
+		}
+		this.setState({showModal: !this.state.showModal});
 	}
 
 	handleChange = (e) => {
@@ -106,6 +117,9 @@ export default class InitiativeApp extends React.Component {
 		const self = this;
 		// Sort characters before rendering
 		const sortedChars = this.state.chars.sort(function(a,b) {
+			if (a.init === null || b.init === null){
+				return 0;
+			}
 			if (b.init === a.init) {
 				if (b.mod === a.mod) {
 						return (self.rollDice() > 10) ? -1 : 1;
@@ -119,9 +133,19 @@ export default class InitiativeApp extends React.Component {
 		return(
 			<div id="init-wrapper">
 				<InitAddModal
-					showAddModal={this.state.showAddModal}
+					showModal={this.state.showModal}
 					handleSubmit={this.handleSubmit}
-					handleshowAddModal={this.handleshowAddModal}/>
+					handleShowModal={this.handleShowModal}/>
+				<Modal show={this.state.showError} onHide={this.handleErrorClose}>
+					<Modal.Title style={{textAlign: "center"}}>Error! Too many characters!</Modal.Title>
+					<Modal.Body>This app has a maximum of 30 entries in order to avoid overloading.
+						<br/>
+						Please remove old entries in order to add new ones.
+					</Modal.Body>
+					<Modal.Footer style={{textAlign: "center"}}>
+						<Button onClick={this.handleErrorClose}>Close</Button>
+					</Modal.Footer>
+				</Modal>
 				<div className="init-container">
 
 					<div id="init-backBtn">
@@ -131,13 +155,14 @@ export default class InitiativeApp extends React.Component {
 									width: "50%",
 									height: "auto",
 									whiteSpace: "inherit",
-									minWidth: "60px",
+									minWidth: "76px",
 							}}
 							onClick={this.handleBack}>Back to App Menu</Button>
 					</div>
 					<InitHeader
-						handleshowAddModal={this.handleshowAddModal}
-						handleRollInitiatives={this.handleRollInitiatives} />
+						handleShowModal={this.handleShowModal}
+						handleRollInitiatives={this.handleRollInitiatives}
+						table={this.state.chars} />
 
 					<InitTable
 						handleKill={this.handleKill}
@@ -145,7 +170,7 @@ export default class InitiativeApp extends React.Component {
 						sortedChars={sortedChars} />
 
 					<InitTableFooter
-						onClick={this.handleClear}
+						handleClear={this.handleClear}
 						table={this.state.chars}
 					/>
 

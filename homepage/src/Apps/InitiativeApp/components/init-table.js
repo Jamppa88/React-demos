@@ -1,25 +1,26 @@
 import React from 'react';
 import InitTableItem from './init-table-item.js';
+import { ListGroup, Jumbotron } from 'react-bootstrap';
 
 export default function InitTable(props) {
 	return(
-		<div id="initTable">
-				<ul id="initList">
+			<Jumbotron
+				id="initTable"
+				style={{margin: "5px 0 0 0", padding: "5px"}}>
+				<ListGroup style={{margin: 0}}>
 					{props.sortedChars.map(function(char) {
-						const style = char.isPC ? {backgroundColor: "forestgreen"} : {backgroundColor: "darkred"};
+						const style = char.isPC ? "success" : "warning" ;
 						return (
-							<li key={char.key}>
-								<InitTableItem
-									char={char}
-									handleKill={props.handleKill}
-									handleChange={props.handleChange}
-									style={style} />
-							</li>);
-					}
-					)}
-				</ul>
-		</div>
+							<InitTableItem
+								key={char.key}
+								char={char}
+								handleKill={props.handleKill}
+								handleChange={props.handleChange}
+								style={style} />
+						);
+					})}
+				</ListGroup>
+			</Jumbotron>
 	);
 }
-
-
+// <Well id="initTable" style={{marginTop: "10px"}}></Well>
