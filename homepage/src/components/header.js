@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Motion, spring } from 'react-motion';
+
 
 export default function Header(props) {
 
@@ -7,17 +9,17 @@ export default function Header(props) {
 		<div id="header_outline">
 			<div id="header">
 				<Motion defaultStyle={{x: 0}} style={{x: spring(1)}}>
-				{({x}) =>
-					<div id="headline" style={{opacity: x}}>
-						<h1>{props.headline}</h1>
-					</div>
-				}
+					{({x}) =>
+						<div id="headline" style={{opacity: x}}>
+							<h1>{props.headline}</h1>
+						</div>
+					}
 				</Motion>
 				<div id="menu">
 					<button className="menuButton" value="Jani Kerttula" onClick={props.onClick}>Etusivu</button>
 					<button className="menuButton" value="Yhteystiedot" onClick={props.onClick}>Yhteystiedot</button>
 					<button className="menuButton" value="Portfolio" onClick={props.onClick}>Portfolio</button>
-					<button className="menuButton" value="Apps" onClick={props.onClick}>Appit</button>
+					<Link className="menuButton" to="/apps">Appit</Link>
 				</div>
 
 				<div id="links">

@@ -1,12 +1,12 @@
-import page from 'page';
 import React from 'react';
+import Footer from './footer.js';
 import Header from './header.js';
 import Content from './content.js';
-import Footer from './footer.js';
+import Sidebar from './sidebar.js';
 import Home from '../views/home-view.js';
 import Contact from '../views/contact-view.js';
 import Portfolio from '../views/portfolio-view.js';
-import Sidebar from './sidebar.js';
+
 import '../style.css';
 
 import { Motion, spring } from 'react-motion';
@@ -62,9 +62,6 @@ export default class HomePage extends React.Component {
 				break;
 			case 'Portfolio':
 				this.setState({view: <Portfolio />, sbVisible: false});
-				break;
-			case 'Apps':
-				page.show("/apps");
 				break;
 		  default:
 			  this.setState({view: <Home />, sbVisible: true});

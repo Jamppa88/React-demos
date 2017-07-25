@@ -1,27 +1,28 @@
-import page from 'page';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './components/homepage.js';
 import AppPage from './Apps/apps.js';
+import HomePage from './components/homepage.js';
 import InitiativeApp from './Apps/InitiativeApp/initiative-app.js';
-import Test from './Apps/Test/test.js';
+
+import { HashRouter, Route, Switch} from 'react-router-dom';
+
 import './style.css';
 
-page("/home", () => {
-	ReactDOM.render(<HomePage />, document.getElementById('root'));
-});
+function App(props) {
+	return(
+		<div>
+			<Switch>
+				<Route exact path="/" component={HomePage} />
+				<Route exact path="/apps" component={AppPage} />
+				<Route path="/apps/initiative" component={InitiativeApp} />
+			</Switch>
+		</div>
+	);
+}
 
-page("/apps", () => {
-	ReactDOM.render(<AppPage />, document.getElementById('root'));
-})
-
-page("/apps/initiative", () => {
-		ReactDOM.render(<InitiativeApp />, document.getElementById('root'));
-})
-
-page("/apps/test", () => {
-	ReactDOM.render(<Test />, document.getElementById('root'));
-})
-
-page("*", () => page.redirect("/home"));
-page.start();
+ReactDOM.render(
+	<HashRouter>
+		<App />
+	</HashRouter>
+	, document.getElementById('root')
+);

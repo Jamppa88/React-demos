@@ -97,10 +97,17 @@ html, body, #root {
 	padding: 1em;
 	outline: 0;
 	opacity: 1;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	text-shadow: none;
+	display: inline-block;
 }
 .menuButton:hover {
 	background-color: #76323F;
 	box-shadow: 0.5px 0.5px 2px black;
+	text-decoration: none;
+	color: #E3DCD7;
 }
 
 #photo {

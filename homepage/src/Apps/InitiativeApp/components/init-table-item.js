@@ -56,7 +56,7 @@ export default class InitTableItem extends React.Component {
 					<Panel
 						collapsible
 						style={{margin: "44px 0 0 0"}}
-						
+
 						bsStyle={this.props.style}
 						expanded={this.state.showPanel}>
 
@@ -94,6 +94,7 @@ export default class InitTableItem extends React.Component {
 								bsSize="small"
 								bsStyle="danger"
 								style={{float: "right"}}
+								value={char.key}
 								onClick={this.props.handleKill}>
 								Kill
 							</Button>

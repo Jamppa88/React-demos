@@ -1,12 +1,12 @@
-import page from 'page';
 import React from 'react';
-import InitHeader from './components/init-header.js';
 import InitTable from './components/init-table.js';
-import InitTableFooter from './components/init-table-footer.js';
+import InitHeader from './components/init-header.js';
 import InitAddModal from './components/init-modal.js';
+import InitTableFooter from './components/init-table-footer.js';
 
 import { Button, Modal } from 'react-bootstrap';
-// import './init.css';
+import { Link } from 'react-router-dom';
+
 import './grids2.css';
 
 export default class InitiativeApp extends React.Component {
@@ -18,10 +18,6 @@ export default class InitiativeApp extends React.Component {
 			chars: [],
 		};
 
-	}
-
-	handleBack = () => {
-		page.show("/apps");
 	}
 
 	handleSubmit = (data) => {
@@ -149,15 +145,18 @@ export default class InitiativeApp extends React.Component {
 				<div className="init-container">
 
 					<div id="init-backBtn">
-						<Button
-							bsStyle="warning"
+						<Link
+							to="/apps"
+							type="button"
+							className="btn btn-warning"
 							style={{
 									width: "50%",
 									height: "auto",
 									whiteSpace: "inherit",
 									minWidth: "76px",
-							}}
-							onClick={this.handleBack}>Back to App Menu</Button>
+							}}>
+							Back to App Menu
+						</Link>
 					</div>
 					<InitHeader
 						handleShowModal={this.handleShowModal}
