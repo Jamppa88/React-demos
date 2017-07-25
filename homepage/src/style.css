@@ -4,6 +4,10 @@ html, body, #root {
 	height: 100%;
 	width: 100%;
 }
+#landing {
+	min-height: 100%;
+	display: inline;
+}
 
 #page {
 	margin: 0;
@@ -11,7 +15,6 @@ html, body, #root {
 	width: 100%;
 	background-image: url(../public/clouds.jpg);
 	background-attachment: fixed;
-	background-repeat: no-repeat;
 
 }
 
@@ -97,6 +100,7 @@ html, body, #root {
 	padding: 1em;
 	outline: 0;
 	opacity: 1;
+	margin: 0;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -248,9 +252,6 @@ html, body, #root {
 	a {
 		margin: 0.1em;
 	}
-	p {
-		font-size: 1.2em;
-	}
 
 }
 @media only screen and (max-width: 650px) {
@@ -262,5 +263,14 @@ html, body, #root {
 	}
 	.menuButton {
 		font-size: 0.8em;
+	}
+	#homeView h2, .view h2 {
+	font-size: 1.5em;
+	}
+	#homeView h3, .view h3 {
+		font-size: 1.4em;
+	}
+	#homeView p, .view p {
+		font-size: 1.2em;
 	}
 }

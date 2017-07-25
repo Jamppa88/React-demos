@@ -6,7 +6,7 @@ export default function InitTable(props) {
 	return(
 			<Jumbotron
 				id="initTable"
-				style={{margin: "5px 0 0 0", padding: "5px"}}>
+				style={{margin: "5px 0 0 0", padding: "5px", zIndex: 0}}>
 				<ListGroup style={{margin: 0}}>
 					{props.sortedChars.map(function(char) {
 						const style = char.isPC ? "success" : "warning" ;

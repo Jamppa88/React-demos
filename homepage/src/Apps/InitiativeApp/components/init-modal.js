@@ -99,28 +99,30 @@ export default class InitModal extends React.Component {
         <Modal.Body>
           <Form horizontal>
             <FormGroup>
-              <Col sm={8}>
+              <Col sm={8} style={{paddingTop: "5px"}}>
                 <FormControl
                   type="text"
                   placeholder="Character Name"
+
                   autoFocus={true}
                   onChange={this.handleChange}
                 />
               </Col>
-              <Col
-                id="init-mod-label"
-                componentClass={ControlLabel}
-                sm={2}
-                xs={6}
-                style={{textAlign: "right", paddingTop: "7px"}}>
-                Modifier
-              </Col>
-              <Col sm={2} xs={6}>
+
+              <Col sm={4} xs={12} style={{paddingTop: "5px"}}>
+
                 <FormControl
+									style={{maxWidth: "80px", float: "right"}}
                   type="number"
                   defaultValue={this.state.mod}
                   onChange={this.handleChange}
                 />
+								<Col
+                id="init-mod-label"
+                componentClass={ControlLabel}
+                style={{textAlign: "right", padding: "13px 10px 0 0", float: "right"}}>
+                Modifier
+              </Col>
               </Col>
             </FormGroup>
             <FormGroup>
@@ -138,7 +140,7 @@ export default class InitModal extends React.Component {
                   <Button
                     name="disAdv"
                     active={this.state.adv === "disAdv" ? true : false}
-                    onClick={this.handleChange}>Disadvantage</Button>
+                    onClick={this.handleChange}>Disadv.</Button>
                   <Button
                     name="normal"
                     active={this.state.adv === "normal" ? true : false}
@@ -146,7 +148,7 @@ export default class InitModal extends React.Component {
                   <Button
                     name="adv"
                     active={this.state.adv === "adv" ? true : false}
-                    onClick={this.handleChange}>Advantage</Button>
+                    onClick={this.handleChange}>Adv.</Button>
                 </ButtonGroup>
               </Col>
             </FormGroup>

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 
 export default function InitHeader(props) {
 	return(
-		<div id="init-header">
+		<div id="init-header" style={{zIndex: 50}}>
 			<Button
 				bsStyle="success"
 				bsSize="large"

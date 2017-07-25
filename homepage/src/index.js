@@ -10,7 +10,7 @@ import './style.css';
 
 function App(props) {
 	return(
-		<div>
+		<div id="landing">
 			<Switch>
 				<Route exact path="/" component={HomePage} />
 				<Route exact path="/apps" component={AppPage} />

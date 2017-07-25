@@ -124,6 +124,12 @@ export default class InitiativeApp extends React.Component {
 			}
 			return b.init - a.init;
 		});
+		let index = 32;
+		const indexedChars = sortedChars.map((char) => {
+			char.zIndex = index;
+			index--;
+			return char;
+		});
 
 
 		return(
@@ -166,7 +172,7 @@ export default class InitiativeApp extends React.Component {
 					<InitTable
 						handleKill={this.handleKill}
 						handleChange={this.handleChange}
-						sortedChars={sortedChars} />
+						sortedChars={indexedChars} />
 
 					<InitTableFooter
 						handleClear={this.handleClear}
