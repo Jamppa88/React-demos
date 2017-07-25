@@ -1,6 +1,5 @@
 import React from 'react';
 import { Panel, ListGroupItem, Button, Well, Col, Glyphicon, FormControl, ControlLabel } from 'react-bootstrap';
-import { Motion, spring } from 'react-motion';
 
 export default class InitTableItem extends React.Component {
 	constructor(props) {
@@ -16,6 +15,10 @@ export default class InitTableItem extends React.Component {
 
 	handleClose = () => {
 		this.setState({showPanel: false});
+	}
+	handleKill = (e) => {
+		this.setState({showPanel: false}, this.props.handleKill(e));
+		
 	}
 
 	render() {
@@ -48,11 +51,9 @@ export default class InitTableItem extends React.Component {
 
 
 		return(
-			<Motion defaultStyle={{x: 0, y: -60}} style={{x: spring(1, {stiffness: 39, damping: 11}), y: spring(0, {stiffness: 39, damping: 11})}}>
-				{({x, y}) =>
-			<span key={char.key}>
+			<div key={char.key}>
 				<ListGroupItem
-					style={{padding: 0, margin: 0, zIndex: char.zIndex,opacity: x, transform: `translate3d(0, ${y}px, 0)`}}
+					style={{padding: 0, margin: 0, zIndex: char.zIndex}}
 					bsStyle={this.props.style} >
 					{header}
 
@@ -98,15 +99,15 @@ export default class InitTableItem extends React.Component {
 								bsStyle="danger"
 								style={{float: "right"}}
 								value={char.key}
-								onClick={this.props.handleKill}>
+								onClick={this.handleKill}>
 								Kill
 							</Button>
 						</Col>
 
 					</Panel>
 				</ListGroupItem>
-			</span>
-			}</Motion>
+			</div>
+		
 		);
 	}
 }
