@@ -13,14 +13,14 @@ export default function Home(props) {
 				<p>Olen {getAge()}-vuotias ohjelmistotekniikan opiskelija, ja aloitin opinnot 2016 Jyväskylän Ammattikorkeakoulussa. Olen jo aikasemminkin opiskellut samassa oppilaitoksessa, automaatiotekniikkaa vuosina 2008-2013.</p>
 				<br />
 				<h2>Kuka olen</h2>
-				<p>Olen yhden lapsen isä, ja asun perheeni kanssa Jyväskylässä. Olen luonteeltani rehti mies jolla on todella hurtti huumorintaju. Pienestä pitäen olen ollut tekniikan kanssa tekemisissä, sekä käsin että koneellísesti.</p>
+				<p>Olen yhden lapsen isä, ja asun perheeni kanssa Jyväskylässä. Olen luonteeltani rehti mies jolla on todella hurtti huumorintaju. Pienestä pitäen olen ollut tekniikan kanssa tekemisissä, sekä käsin että koneellisesti.</p>
 				<p>Olen kokenut julkinen puhuja, joka saa kaikenkokoisista yleisöistä otteen. Osaan tehdä töitä sekä aivoillani että käsillä, joka heijastuu enimmäkseen ohjelmointiin ja erinäisiin kädentaitoihin. Ohjelmoinnissa käytössä on pääasiallisesti Javascript, PHP, C#, C++ sekä monia muita.</p>
 				<br />
 				<h2>Harrastukset</h2>
 				<p>Harrastuksiini kuuluu kitaran soitto, laulanta, sulkapallo, frisbeegolf, videopelit, D&D ja pulkkamäki.</p>
 
 				<h3>Musiikki</h3>
-				<p>Aikoinaan aloitin musiikin parissa laulamisella, joskus 7-9 vuoden iässä. Sen ei ollut silloin vielä kovin suuri ja tärkeä asia itselleni, mutta yläasteen puolella löysin innon opetella kitaran soittoa. Perustettiin bändejä, vedettiin pikkukeikkoja ja käyttäydyttiin huonosti. Lukiota valitseassani päätin kokeilla hakea musiikkilukioon, ja sattumalta sain sinne opiskelupaikan.</p>
+				<p>Aikoinaan aloitin musiikin parissa laulamisella, joskus 7-9 vuoden iässä. Se ei ollut silloin vielä kovin suuri ja tärkeä asia itselleni, mutta yläasteen puolella löysin innon opetella kitaran soittoa. Perustettiin bändejä, vedettiin pikkukeikkoja ja käyttäydyttiin huonosti. Lukiota valitseassani päätin kokeilla hakea musiikkilukioon, ja sattumalta sain sinne opiskelupaikan.</p>
 				<p>Nykyisellään musisoin omaksi ja lapseni iloksi. Suurin saavutus mitä tästä sain, oli se että vahingossa löysin itseni Sonisphere 2009 -päälavalta laulamassa 42 000 ihmiselle.</p>
 
 				<h3>Liikunta</h3>

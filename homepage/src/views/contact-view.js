@@ -7,9 +7,9 @@ export default function Contact(props){
 		{({x, y}) =>
 			<div className="view" style={{transform: `translate3d(${x}px, 0px, 0px)`, opacity: y}}>
 				<p>Minut saa parhaiten kiinni sähköpostilla ja puhelimella.</p>
-				<h2>Puhelin</h2>
+				<h2>Puhelin:</h2>
 				<p>040-5289578</p>
-				<h2>Sähköposti</h2>
+				<h2>Sähköposti:</h2>
 				<p className="email">janikerttula88@gmail.com</p>
 				<p className="email">K8958@student.jamk.fi</p>
 
